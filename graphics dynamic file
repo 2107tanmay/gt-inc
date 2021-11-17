@@ -1,0 +1,113 @@
+#include<stdio.h>
+#include<graphics.h>
+#include<conio.h>
+void choice()
+{
+int choice,n,r,a,b,c,d,sa,ea,xr,yr;
+char more,yes,no;
+clrscr();
+printf(" 1.lines \n 2. circle \n 3. rectangle  \n 4. pixel \n 5. ellipse \n 6. arc \n");
+printf("\n \n please enter your choice according to the list above\n");
+scanf("%d",&choice);
+clrscr();
+choice:
+switch(choice)
+{
+case 1:
+printf("\n you chose line\n ");
+printf("\n please enter the number of lines you will need.  \n");
+scanf("%d",&n);
+clrscr();
+for(int i=1;i<=n;i++)
+{
+printf("\n enter the coordinates of line no- %d  \n", i);
+scanf("%d%d%d%d",&a,&b,&c,&d);
+clrscr();
+line(a,b,c,d);
+}
+
+break;
+
+case 2:
+printf("\n You chose circle \n ");
+printf("\n  \n");
+scanf("%d",&n);
+for( i=1;i<=n;i++)
+{
+printf("\n enter the coordinates ofcircle and its radius - %d  \n",i);
+scanf("%d%d%d",&a,&b,&r);
+clrscr();
+circle(a,b,r);
+}
+break;
+
+case 3:
+printf("\n You chose rectagle \n ");
+printf("\n please enter number of rectangles you would like  \n");
+scanf("%d",&n);
+for( i=1;i<=n;i++)
+{
+printf("\n enter the coordinates of - %d  \n",i);
+scanf("%d%d%d%d",&a,&b,&c,&d);
+rectangle(a,b,c,d);
+getch();
+
+clrscr();
+}
+break;
+
+case 4:
+printf("\n You chose polygon \n ");
+printf("\n enter the number of pixels you need  \n");
+scanf("%d",&n);
+for(i=1;i<=n;i++)
+{
+printf("\n enter the coordinates of the pixel - %d  \n",i);
+scanf("%d%d",&a,&b);
+putpixel(a,b,BLACK);
+getch();
+}
+break;
+
+
+case 5:
+printf("\n You chose ellipse \n ");
+printf("\n enter the number of ellipse you need  \n");
+scanf("%d",&n);
+for(i=1;i<=n;i++)
+{
+printf("\n enter the coordinates start angle end angle and x y radiuses of the ellipse- %d  \n",i);
+scanf("%d%d%d%d%d%d",&a,&b,&sa,&ea,&xr,&yr);
+ellipse(a,b,sa,ea,xr,yr);
+getch();
+}
+break;
+
+
+
+case 6:
+printf("\n You chose arc \n ");
+printf("\n enter the number of arcs you need  \n");
+scanf("%d",&n);
+for(i=1;i<=n;i++)
+{
+printf("\n enter the coordinates start angle end angle and radiu of the arc- %d  \n",i);
+scanf("%d%d%d%d%d",&a,&b,&sa,&ea,&r);
+arc(a,b,sa,ea,r);
+getch();
+}
+break;
+}
+}
+
+int main()
+{
+int gm,gd=DETECT,a,b,c,d;
+initgraph(&gd,&gm,"c:\\turboc3\bgi");
+setcolor(RED);
+
+choice();
+getch();
+closegraph();
+return 0;
+}
