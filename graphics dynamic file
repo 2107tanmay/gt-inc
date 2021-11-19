@@ -105,7 +105,6 @@ int main()
 int gm,gd=DETECT,a,b,c,d;
 initgraph(&gd,&gm,"c:\\turboc3\bgi");
 setcolor(RED);
-
 choice();
 getch();
 closegraph();
