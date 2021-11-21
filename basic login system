@@ -1,0 +1,37 @@
+#include"iostream.h"
+#include"conio.h"
+class password
+{
+public:
+int cs;
+char pass;
+int cid;
+char pas;
+void getdata()
+{
+clrscr();
+cout<<"pelase enter your customer id: "<<endl;
+cin>>cid;
+cout<<"pelase enter your password: "<<endl;
+cin>>pas;
+}
+void showdata()
+{
+if(cid==cs && pas==pass)
+   {
+    clrscr();
+    cout<<"you now have access to the account number: "<<cid<<endl;
+    getch();
+    }
+else
+{cout<<"password or id is wrong"<<endl;  }
+}
+};
+int main()
+{ password p;
+  p.cs=1234;
+  p.pass='a';
+  p.getdata();
+  p.showdata();
+  return 0;
+}
